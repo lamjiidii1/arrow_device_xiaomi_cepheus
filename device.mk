@@ -396,6 +396,7 @@ PRODUCT_PACKAGES += \
    CarrierConfigOverlayCepheus \
    DialerOverlayCepheus \
    FrameworksResOverlayCepheus \
+   NotchBarKillerCepheus \
    SettingsOverlayCepheus \
    SettingsProvidorOverlayCepheus \
    SystemUIOverlayCepheus \
