@@ -1,5 +1,6 @@
 # Camera
 vendor.camera.                          u:object_r:vendor_camera_prop:s0
+persist.vendor.camera                   u:object_r:vendor_camera_prop:s0
 camera.sensor.rearMain.fuseID           u:object_r:vendor_camera_prop:s0
 camera.sensor.frontAux.fuseID           u:object_r:vendor_camera_prop:s0
 camera.sensor.frontMain.fuseID          u:object_r:vendor_camera_prop:s0

@@ -19,6 +19,7 @@ persist.vendor.camera.enableNCSService=TRUE
 persist.vendor.camera.enableTOFInterface=TRUE
 persist.vendor.camera.mfnrframenum=8
 persist.vendor.camera.multicam=TRUE
+persist.vendor.camera.privapp.list=com.android.camera
 
 # Display density
 ro.sf.lcd_density=440
