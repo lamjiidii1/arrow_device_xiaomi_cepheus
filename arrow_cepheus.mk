@@ -23,10 +23,12 @@ $(call inherit-product, device/xiaomi/cepheus/device.mk)
 
 # Inherit some common ArrowOS stuff.
 $(call inherit-product, vendor/arrow/config/common.mk)
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# MAINTAINER NAME
 DEVICE_MAINTAINER := lamjiidii1
 
 # Device identifier
