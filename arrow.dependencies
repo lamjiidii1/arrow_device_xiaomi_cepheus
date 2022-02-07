@@ -1,34 +1,47 @@
 [
  {
-   "repository" : "vendor_xiaomi_cepheus",
+   "repository" : "lamjiidii1/vendor_xiaomi_cepheus",
    "target_path": "vendor/xiaomi/cepheus",
+   "branch"     : "arrow-12.0"
+   "remote"     : "github"
+   "clone-depth": "1",
  },
  {
-   "repository" : "kernel_xiaomi_cepheus",
+   "repository" : "PixelExperience-Devices/kernel_xiaomi_cepheus",
    "target_path": "kernel/xiaomi/cepheus",
+   "branch"     : "twelve"
+   "remote"     : "github"
  },
  {
-   "repository" : "LineageOS/android_hardware_xiaomi",
+   "repository" : "ArrowOS/android_hardware_xiaomi",
    "target_path": "hardware/xiaomi",
-   "branch"     : "lineage-18.1"
+   "branch"     : "arrow-12.0"
+   "remote"     : "github"
  },
-   {
-    "repository": "android_device_xiaomi_extras",
-    "target_path": "device/xiaomi/extras"
-  },
+ {
+   "repository" : "ArrowOS/android_device_xiaomi_extras",
+   "target_path": "device/xiaomi/extras"
+   "branch"     : "arrow-12.0"
+   "remote"     : "github"
+ },
  {
    "repository" : "vendor_xiaomi-firmware",
    "target_path": "vendor/xiaomi-firmware",
-   "branch"     : "eleven"
+   "remote"     : "pixel-devices-blobs",
+   "clone-depth": "1",
+   "branch"     : "twelve"
  },
  {
    "repository" : "jjpprrrr/prelude-clang",
    "target_path": "prebuilts/clang/host/linux-x86/clang-prelude",
    "branch"     : "master",
    "remote"     : "gitlab"
+   "clone-depth": "1",
  },
  {
-   "repository": "android_packages_apps_GCamGOPrebuilt",
+   "repository" : "ArrowOS/android_packages_apps_GCamGOPrebuilt",
    "target_path": "packages/apps/GCamGOPrebuilt"
+   "branch"     : "arrow-12.0"
+   "remote"     : "github"
  }
 ]

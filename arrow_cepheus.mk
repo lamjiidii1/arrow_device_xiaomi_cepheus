@@ -49,4 +49,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
 
 # Include firmware
-# $(call inherit-product, vendor/xiaomi-firmware/cepheus/firmware.mk)
+$(call inherit-product, vendor/xiaomi-firmware/cepheus/firmware.mk)
