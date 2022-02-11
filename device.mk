@@ -400,8 +400,8 @@ PRODUCT_PACKAGES += \
    SettingsProvidorOverlayCepheus \
    SystemUIOverlayCepheus \
    TelephonyOverlayCepheus \
-   TetheringConfigOverlay \
-   WifiOverlay
+   TetheringConfigOverlayCepheus \
+   WifiOverlayCepheus
 
 # Power
 PRODUCT_PACKAGES += \
