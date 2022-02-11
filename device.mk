@@ -391,10 +391,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-arrow
+# Overlays
+PRODUCT_PACKAGES += \
+   CarrierConfigOverlayCepheus \
+   DialerOverlayCepheus \
+   FrameworksResOverlayCepheus \
+   SettingsOverlayCepheus \
+   SettingsProvidorOverlayCepheus \
+   SystemUIOverlayCepheus \
+   TelephonyOverlayCepheus \
+   TetheringConfigOverlay \
+   WifiOverlay
 
 # Power
 PRODUCT_PACKAGES += \
@@ -540,8 +547,6 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     libwifi-hal-qcom \
     libwpa_client \
-    TetheringConfigOverlay \
-    WifiOverlay \
     wpa_cli \
     wpa_supplicant \
     wpa_supplicant.conf
