@@ -398,7 +398,7 @@ PRODUCT_PACKAGES += \
    FrameworksResOverlayCepheus \
    NotchBarKillerCepheus \
    SettingsOverlayCepheus \
-   SettingsProvidorOverlayCepheus \
+   SettingsProviderOverlayCepheus \
    SystemUIOverlayCepheus \
    TelephonyOverlayCepheus \
    TetheringConfigOverlayCepheus \
