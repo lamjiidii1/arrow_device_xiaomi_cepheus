@@ -32,10 +32,10 @@
    "branch"     : "twelve"
  },
  {
-   "repository" : "jjpprrrr/prelude-clang",
-   "target_path": "prebuilts/clang/host/linux-x86/clang-prelude",
+   "repository" : "kdrag0n/proton-clang",
+   "target_path": "prebuilts/clang/host/linux-x86/clang-proton",
    "branch"     : "master",
-   "remote"     : "gitlab"
+   "remote"     : "github"
    "clone-depth": "1",
  },
  {
