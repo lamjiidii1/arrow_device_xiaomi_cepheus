@@ -42,11 +42,6 @@ on init
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
 
-    chmod 0664 /sys/class/thermal/thermal_message/sconfig
-    chown system system /sys/class/thermal/thermal_message/sconfig
-    chmod 0666 /sys/class/thermal/thermal_message/temp_state
-    chown system system /sys/class/thermal/thermal_message/temp_state
-
 on early-fs
     start vold
 
@@ -105,6 +100,8 @@ on post-fs-data
 on boot
     start vendor.rmt_storage
     start vendor.rfs_access
+
+    chown system system /sys/class/thermal/thermal_message/sconfig
 
     # Set doze mode permissions
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_mode
