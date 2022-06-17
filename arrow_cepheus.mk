@@ -38,15 +38,14 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 9
 PRODUCT_MANUFACTURER := Xiaomi
 
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
 # Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:12/SQ1A.220105.002/7961164:user/release-keys
-BUILD_DESCRIPTION := redfin-user 12 SQ1A.220105.002 7961164 release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:12/SQ3A.220605.009.A1/8643238:user/release-keys
+BUILD_DESCRIPTION := redfin-user 12 SQ3A.220605.009.A1 8643238 release-keys
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
-
-# Include firmware
-#$(call inherit-product, vendor/xiaomi-firmware/cepheus/firmware.mk)
