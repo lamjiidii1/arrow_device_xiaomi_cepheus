@@ -22,8 +22,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -32,18 +30,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class PickupSensor implements SensorEventListener {
+
     private static final boolean DEBUG = false;
     private static final String TAG = "PickupSensor";
 
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
-    private static final int WAKELOCK_TIMEOUT_MS = 300;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
-    private PowerManager mPowerManager;
-    private WakeLock mWakeLock;
 
     private long mEntryTimestamp;
 
@@ -51,19 +47,16 @@ public class PickupSensor implements SensorEventListener {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = DozeUtils.getSensor(mSensorManager, "xiaomi.sensor.pickup");
-        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
-        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
-    private Future<?> submit(Runnable runnable) { return mExecutorService.submit(runnable); }
+    private Future<?> submit(Runnable runnable) {
+        return mExecutorService.submit(runnable);
+    }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isRaiseToWake = DozeUtils.isRaiseToWakeEnabled(mContext);
-
-        if (DEBUG)
-            Log.d(TAG, "Got sensor event: " + event.values[0]);
+        if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
         if (delta < MIN_PULSE_INTERVAL_MS) {
@@ -73,13 +66,7 @@ public class PickupSensor implements SensorEventListener {
         mEntryTimestamp = SystemClock.elapsedRealtime();
 
         if (event.values[0] == 1) {
-            if (isRaiseToWake) {
-                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
-                mPowerManager.wakeUp(SystemClock.uptimeMillis(),
-                    PowerManager.WAKE_REASON_GESTURE, TAG);
-            } else {
-                DozeUtils.launchDozePulse(mContext);
-            }
+            DozeUtils.launchDozePulse(mContext);
         }
     }
 
@@ -89,17 +76,18 @@ public class PickupSensor implements SensorEventListener {
     }
 
     protected void enable() {
-        if (DEBUG)
-            Log.d(TAG, "Enabling");
+        if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
-            mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
+            mSensorManager.registerListener(this, mSensor,
+                    SensorManager.SENSOR_DELAY_NORMAL);
             mEntryTimestamp = SystemClock.elapsedRealtime();
         });
     }
 
     protected void disable() {
-        if (DEBUG)
-            Log.d(TAG, "Disabling");
-        submit(() -> { mSensorManager.unregisterListener(this, mSensor); });
+        if (DEBUG) Log.d(TAG, "Disabling");
+        submit(() -> {
+            mSensorManager.unregisterListener(this, mSensor);
+        });
     }
 }
