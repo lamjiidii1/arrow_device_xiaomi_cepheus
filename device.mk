@@ -124,7 +124,7 @@ PRODUCT_COPY_FILES += \
 # Camera GO
 ifeq ($(ARROW_GAPPS), true)
 PRODUCT_PACKAGES += \
-    GCamGOPrebuilt
+    GCamGOPrebuilt-V2
 else
 PRODUCT_PACKAGES += \
     Snap
