@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Product launched with 9.0
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
-    fs_config_files
+    fs_config_filesgsi_keys
 
 # ANT+
 PRODUCT_PACKAGES += \
