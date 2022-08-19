@@ -1,21 +1,22 @@
 [
  {
-   "repository" : "lamjiidii1/vendor_xiaomi_cepheus",
+   "repository" : "lamjiidii1/arrow_vendor_xiaomi_cepheus",
    "target_path": "vendor/xiaomi/cepheus",
-   "branch"     : "arrow-12.0"
+   "branch"     : "arrow-13.0"
    "remote"     : "github"
    "clone-depth": "1",
  },
  {
-   "repository" : "PixelExperience-Devices/kernel_xiaomi_cepheus",
+   "repository" : "lamjiidii1/arrow_kernel_xiaomi_cepheus",
    "target_path": "kernel/xiaomi/cepheus",
-   "branch"     : "twelve"
+   "branch"     : "arrow-13.0"
    "remote"     : "github"
+   "clone-depth": "1",
  },
  {
    "repository" : "ArrowOS/android_hardware_xiaomi",
    "target_path": "hardware/xiaomi",
-   "branch"     : "arrow-12.0"
+   "branch"     : "arrow-13.0"
    "remote"     : "github"
  },
  {
@@ -23,13 +24,6 @@
    "target_path": "device/xiaomi/extras"
    "branch"     : "arrow-12.0"
    "remote"     : "github"
- },
- {
-   "repository" : "vendor_xiaomi-firmware",
-   "target_path": "vendor/xiaomi-firmware",
-   "remote"     : "pixel-devices-blobs",
-   "clone-depth": "1",
-   "branch"     : "twelve"
  },
  {
    "repository" : "kdrag0n/proton-clang",
@@ -41,7 +35,8 @@
  {
    "repository" : "ArrowOS/android_packages_apps_GCamGOPrebuilt",
    "target_path": "packages/apps/GCamGOPrebuilt"
-   "branch"     : "arrow-12.0"
+   "branch"     : "arrow-12.1"
    "remote"     : "github"
+   "clone-depth": "1",
  }
 ]
