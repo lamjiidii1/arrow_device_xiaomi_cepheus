@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
-    fs_config_filesgsi_keys
+    fs_config_files
 
 # ANT+
 PRODUCT_PACKAGES += \
